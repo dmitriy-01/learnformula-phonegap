@@ -52,9 +52,9 @@ $item-input-padding: 16px !default;
  * App Branding
  */
 .mm-bglogo {
-  background-color: #ff5c00; /* Change this to add a bg image or change color */
-  background: -webkit-radial-gradient(#ff7600, #ff5c00);
-  background: radial-gradient(#ff7600, #ff5c00);
+  background-color: #23a96f; /* Change this to add a bg image or change color */
+  background: -webkit-radial-gradient(#23d59a, #23a96f);
+  background: radial-gradient(#2fe298, #23a96f);
   background-repeat: no-repeat;
   background-position: center center;
   position: absolute;
@@ -1999,6 +1999,23 @@ $mm-rte-min-height: 80px !default;
     margin: 0;
   }
 }
+
+.item.item-button-right .badge.mm-course-download{
+  right: $spinner-width + $item-padding;
+}
+
+.mm-course-module-handler mm-format-text + mm-format-text {
+  margin-top: 16px;
+}
+
+mm-course-mod-description .card .item {
+  padding: $item-padding / 2;
+}
+
+.padding mm-course-mod-description .card {
+  margin-top: 0;
+}
+
 $chart-size: 70px;
 $doughnut-border-size: 15px;
 $doughnut-dasharray: 173;
@@ -2121,23 +2138,6 @@ $doughnut-text-colour: $gray-darker;
 mm-course-list-item .item-icon-left {
   color: $black;
 }
-
-.item.item-button-right .badge.mm-course-download{
-  right: $spinner-width + $item-padding;
-}
-
-.mm-course-module-handler mm-format-text + mm-format-text {
-  margin-top: 16px;
-}
-
-mm-course-mod-description .card .item {
-  padding: $item-padding / 2;
-}
-
-.padding mm-course-mod-description .card {
-  margin-top: 0;
-}
-
 .mm-fileuploader-file-handler {
     input {
         position: absolute;
@@ -2321,10 +2321,6 @@ mm-course-mod-description .card .item {
   }
 }
 
-#mm-settings-languagelabel {
-  color: $base-color;
-}
-
 
 $mm-question-correct-color:         $green-dark !default;
 $mm-question-correct-color-bg:      $green-light !default;
@@ -2456,6 +2452,10 @@ li.mm-question-answer-incorrect,
 
 .mm-question-warning, p.mm-question-warning, .item .mm-question-warning {
   color: $mm-question-warning-color;
+}
+
+#mm-settings-languagelabel {
+  color: $base-color;
 }
 
 // Variables.
@@ -3196,55 +3196,6 @@ $mma-chat-notice-badge: "stable" !default;
 }
 
 
-$mma-mod-scorm-level-margin:		25px !default;
-$mma-mod-scorm-warning-color:		$red !default;
-
-@for $i from 0 through 15 {
-  .mma-scorm-level-#{$i} {
-    padding-left: $item-padding + 15px * $i
-  }
-}
-
-.mma-mod-scorm-checkbox-padding {
-  padding: 5px 10px;
-}
-
-.mma-mod-scorm-warning {
-  color: $mma-mod-scorm-warning-color;
-}
-
-ion-popover-view {
-  /* Adapt popover to content's height. The popover's ion-content needs to disable Ionic scroll. */
-  &.mma-scorm-popover {
-    height: auto;
-    max-height: 80%;
-    overflow: scroll;
-
-    ion-content {
-      position: relative;
-    }
-    &::-webkit-scrollbar {
-      display: none;
-    }
-    p.padding {
-      margin: 0px; /* Don't add margins to p with padding inside the TOC. */
-    }
-  }
-
-  /* Decrease items padding in popover. */
-  .mma-scorm-popover-item {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-}
-
-/* Fix popover styles in iOS. */
-.platform-ios ion-popover-view.mma-scorm-popover {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-
 $mma-mod-quiz-warning-color:      $red !default;
 $mma-mod-quiz-highlight-bgcolor:  $blue-light !default;
 $mma-mod-quiz-highlight-color:    $blue-dark !default;
@@ -3340,6 +3291,55 @@ p.mma-mod-quiz-warning {
 #mma-mod-quiz-toc .item {
   border-color: $gray-dark;
 }
+
+$mma-mod-scorm-level-margin:		25px !default;
+$mma-mod-scorm-warning-color:		$red !default;
+
+@for $i from 0 through 15 {
+  .mma-scorm-level-#{$i} {
+    padding-left: $item-padding + 15px * $i
+  }
+}
+
+.mma-mod-scorm-checkbox-padding {
+  padding: 5px 10px;
+}
+
+.mma-mod-scorm-warning {
+  color: $mma-mod-scorm-warning-color;
+}
+
+ion-popover-view {
+  /* Adapt popover to content's height. The popover's ion-content needs to disable Ionic scroll. */
+  &.mma-scorm-popover {
+    height: auto;
+    max-height: 80%;
+    overflow: scroll;
+
+    ion-content {
+      position: relative;
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    p.padding {
+      margin: 0px; /* Don't add margins to p with padding inside the TOC. */
+    }
+  }
+
+  /* Decrease items padding in popover. */
+  .mma-scorm-popover-item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+/* Fix popover styles in iOS. */
+.platform-ios ion-popover-view.mma-scorm-popover {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .mm-site_mod_survey {
   .row, .input-label {
     font-size: $font-size-base;
